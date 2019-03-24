@@ -24,5 +24,10 @@ namespace TimeTracker
         {
             InitializeComponent();
         }
+
+        private void Tryck_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Var är uppgiften?");
+        }
     }
 }
