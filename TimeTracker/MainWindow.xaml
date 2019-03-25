@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+
+            <Button Height="100" 
+                    Width="100"
+                    Name="Tryck"
+                    Content="Tryck"
+                    FontSize="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="Tryck_Click"/>
+
+
     </Grid>
 </Window>
