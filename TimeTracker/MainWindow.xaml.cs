@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Caliburn.Micro;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -29,9 +30,10 @@ namespace TimeTracker
 
             //DaysListView.ItemsSource = vm.ListOfDays;
             DataContext = vm;
-            DaysListBox.ItemsSource = vm.ListOfDays;
+           
             
         }
+
 
         private void Months_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -43,7 +45,8 @@ namespace TimeTracker
             List<int> test;
             test = month.Days;
 
-            var vm = new TimeTrackerViewModel();
+             var vm = new TimeTrackerViewModel();
+            listDays.ItemsSource = vm.Days;
             DataContext = vm;
         }
 

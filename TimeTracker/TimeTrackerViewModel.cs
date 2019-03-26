@@ -21,19 +21,20 @@ namespace TimeTracker
 
 
 
-        //public TimeTrackerViewModel()
-        //{
-        //    Months = Month.GetMonthNames();
-        //    Days = Month.GetDaysInCertainMonth();
+        public TimeTrackerViewModel()
+        {
+            Months = Month.GetMonthNames();
+            Days = Month.GetDaysInCertainMonth();
+            
+        }
+            //    var x = new BindableCollection<string>();
+            //    x.Add("cha");
+            //    x.Add("sdsd");
+            //    x.Add("fgd");
+            //    x.Add("ewr");
+            //    x.Add("hgs");
+            //    _listOfDays = x;
 
-        //    var x = new BindableCollection<string>();
-        //    x.Add("cha");
-        //    x.Add("sdsd");
-        //    x.Add("fgd");
-        //    x.Add("ewr");
-        //    x.Add("hgs");
-        //    _listOfDays = x;
-
-        //}
-    }
+            //}
+        }
 }
