@@ -92,6 +92,7 @@ namespace TimeTracker
             }
             return obcollOfDays;
         }
+
         public static ObservableCollection<string> GetMonthNames()
         {
             string[] arrOfEnums = Enum.GetNames(typeof(MonthName));

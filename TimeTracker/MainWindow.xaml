@@ -8,7 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
 
 
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -109,11 +108,19 @@
         <TextBlock Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="11" Margin="5" Text="" />
 
 
-        <ItemsControl>
-        <TextBlock Text="{Binding Days}" Grid.Column="1" Grid.ColumnSpan="14" Grid.Row="25" />
-            
+
+        <ItemsControl x:Name="ListOfDays">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        
+                        <TextBlock Text="Cha" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+
 
 
 
