@@ -109,7 +109,7 @@
 
 
 
-        <ItemsControl x:Name="ListOfDays">
+        <!--<ItemsControl x:Name="ListOfDays">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -119,8 +119,21 @@
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        </ItemsControl>-->
 
+        <!--<ListView Name="DaysListView" Grid.Row="1" Grid.RowSpan="31" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                    <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <ListBox Name="DaysListBox"  Grid.Row="1" Grid.RowSpan="31" Grid.Column="1">
+            <!--<TextBlock Text="{Binding}"/>-->
+            <ListBoxItem Content="{Binding}"></ListBoxItem>
+        </ListBox>
 
 
 

@@ -26,7 +26,11 @@ namespace TimeTracker
             InitializeComponent();
 
             var vm = new TimeTrackerViewModel();
+
+            //DaysListView.ItemsSource = vm.ListOfDays;
             DataContext = vm;
+            DaysListBox.ItemsSource = vm.ListOfDays;
+            
         }
 
         private void Months_SelectionChanged(object sender, SelectionChangedEventArgs e)
