@@ -16,7 +16,7 @@ namespace TimeTracker
         public MonthName MonthName { get { return _monthName; } set { _monthName = value; OnPropertyChanged(); } }
 
         private static List<int> _days = new List<int>();
-        
+
 
         public List<int> Days
         {
@@ -59,9 +59,43 @@ namespace TimeTracker
         }
 
 
-        public List<decimal> HoursPerDay { get; set; }
+        public List<decimal[]> HoursPerDay { get; set; }
 
-        public decimal TotalHours { get { return HoursPerDay.Sum(); } }
+        public decimal TotalHours
+        {
+            get
+            {
+                switch (MonthName)
+                {
+                    case MonthName.Jan:
+                        return HoursPerDay[0].Sum();
+                    case MonthName.Feb:
+                        return HoursPerDay[1].Sum();
+                    case MonthName.Mar:
+                        return HoursPerDay[2].Sum();
+                    case MonthName.Apr:
+                        return HoursPerDay[3].Sum();
+                    case MonthName.May:
+                        return HoursPerDay[4].Sum();
+                    case MonthName.Jun:
+                        return HoursPerDay[5].Sum();
+                    case MonthName.Jul:
+                        return HoursPerDay[6].Sum();
+                    case MonthName.Aug:
+                        return HoursPerDay[7].Sum();
+                    case MonthName.Sep:
+                        return HoursPerDay[8].Sum();
+                    case MonthName.Oct:
+                        return HoursPerDay[9].Sum();
+                    case MonthName.Nov:
+                        return HoursPerDay[10].Sum();
+                    case MonthName.Dec:
+                        return HoursPerDay[11].Sum();
+                    default:
+                        return 14.99m;
+                }
+            }
+        }
 
 
 
@@ -82,7 +116,7 @@ namespace TimeTracker
             var obcollOfDays = new ObservableCollection<string>();
 
             if (_days == null)
-            { 
+            {
                 return obcollOfDays;
             }
 

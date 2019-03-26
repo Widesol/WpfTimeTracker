@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeTracker"
         mc:Ignorable="d" FontFamily="Asap"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="570" Width="960">
 
 
     <Grid>
@@ -109,32 +109,31 @@
 
 
 
-        <!--<ItemsControl x:Name="ListOfDays">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        
-                        <TextBlock Text="Cha" />
+       
 
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>-->
 
-        <!--<ListView Name="DaysListView" Grid.Row="1" Grid.RowSpan="31" Grid.Column="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                    <TextBlock Text="{Binding}"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-        <ListBox Name="DaysListBox"  Grid.Row="1" Grid.RowSpan="31" Grid.Column="1">
-            <!--<TextBlock Text="{Binding}"/>-->
-            <ListBoxItem Content="{Binding}"></ListBoxItem>
-        </ListBox>
 
+
+
+        
+
+
+
+        <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="1" Grid.Row="1">
+            <ItemsControl  ItemsSource="{Binding Days}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+
+
+
+
+        
 
 
 

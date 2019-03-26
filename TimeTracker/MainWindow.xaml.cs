@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +27,9 @@ namespace TimeTracker
         {
             InitializeComponent();
 
-            var vm = new TimeTrackerViewModel();
+            var viewModel = new TimeTrackerViewModel();
+            DataContext = viewModel;
 
-            //DaysListView.ItemsSource = vm.ListOfDays;
-            DataContext = vm;
-            DaysListBox.ItemsSource = vm.ListOfDays;
-            
         }
 
         private void Months_SelectionChanged(object sender, SelectionChangedEventArgs e)
