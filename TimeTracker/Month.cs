@@ -11,13 +11,11 @@ namespace TimeTracker
 {
     public class Month : INotifyPropertyChanged
     {
-
         private MonthName _monthName;
         public MonthName MonthName { get { return _monthName; } set { _monthName = value; OnPropertyChanged(); } }
 
+
         private static List<int> _days = new List<int>();
-
-
         public List<int> Days
         {
             get
@@ -59,43 +57,10 @@ namespace TimeTracker
         }
 
 
-        public List<decimal[]> HoursPerDay { get; set; }
+        public List<decimal> HoursPerDay { get; set; }
 
-        public decimal TotalHours
-        {
-            get
-            {
-                switch (MonthName)
-                {
-                    case MonthName.Jan:
-                        return HoursPerDay[0].Sum();
-                    case MonthName.Feb:
-                        return HoursPerDay[1].Sum();
-                    case MonthName.Mar:
-                        return HoursPerDay[2].Sum();
-                    case MonthName.Apr:
-                        return HoursPerDay[3].Sum();
-                    case MonthName.May:
-                        return HoursPerDay[4].Sum();
-                    case MonthName.Jun:
-                        return HoursPerDay[5].Sum();
-                    case MonthName.Jul:
-                        return HoursPerDay[6].Sum();
-                    case MonthName.Aug:
-                        return HoursPerDay[7].Sum();
-                    case MonthName.Sep:
-                        return HoursPerDay[8].Sum();
-                    case MonthName.Oct:
-                        return HoursPerDay[9].Sum();
-                    case MonthName.Nov:
-                        return HoursPerDay[10].Sum();
-                    case MonthName.Dec:
-                        return HoursPerDay[11].Sum();
-                    default:
-                        return 14.99m;
-                }
-            }
-        }
+
+        public decimal TotalHours { get { return HoursPerDay.Sum(); } }
 
 
 
@@ -110,6 +75,19 @@ namespace TimeTracker
             }
         }
 
+        public static ObservableCollection<Month> FillTimeTableWithTime()
+        {
+            var yyy = new ObservableCollection<Month>();
+            var x1 = new Month { MonthName = MonthName.Feb, HoursPerDay = new List<decimal> { 1, 2, 3, 4, 5, 5, 6 } };
+            var x2 = new Month { MonthName = MonthName.Mar, HoursPerDay = new List<decimal> { 1, 2, 3, 11, 5, 5, 6 } };
+            var x3 = new Month { MonthName = MonthName.Dec, HoursPerDay = new List<decimal> { 1, 2, 3, 12, 5, 5, 6 } };
+            var x4 = new Month { MonthName = MonthName.Feb, HoursPerDay = new List<decimal> { 1, 2, 3, 4, 5, 5, 4 } };
+            yyy.Add(x1);
+            yyy.Add(x2);
+            yyy.Add(x3);
+            yyy.Add(x4);
+            return yyy;
+        }
 
         public static ObservableCollection<string> GetDaysInCertainMonth()
         {

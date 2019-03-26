@@ -12,12 +12,13 @@ namespace TimeTracker
     {
         public ObservableCollection<string> Months { get; set; }
         public ObservableCollection<string> Days { get; set; }
-        public ObservableCollection<decimal[]> TimeTable { get; set; }
+        public ObservableCollection<Month> TimeTable { get; set; }
 
         public TimeTrackerViewModel()
         {
             Months = Month.GetMonthNames();
             Days = Month.GetDaysInCertainMonth();
+            TimeTable = Month.FillTimeTableWithTime();
         }
     }
 }
