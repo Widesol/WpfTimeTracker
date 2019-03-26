@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,33 @@ namespace TimeTracker
         public MainWindow()
         {
             InitializeComponent();
+
+            var vm = new TimeTrackerViewModel();
+            DataContext = vm;
         }
 
-        private void Tryck_Click(object sender, RoutedEventArgs e)
+        private void Months_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show("Var är uppgiften?");
+            var month = new Month();
+
+            Enum.TryParse(Months.SelectedValue.ToString(), out MonthName monthName);
+            month.MonthName = monthName;
+
+            List<int> test;
+            test = month.Days;
+
+            var vm = new TimeTrackerViewModel();
+            DataContext = vm;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var x = Months.SelectedValue;
+            var y = Days.SelectedValue;
+            var z = InputHours.SelectedText;
+
+
+
         }
     }
 }
