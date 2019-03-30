@@ -45,6 +45,7 @@ namespace TimeTracker
             test = month.Days;
 
              var vm = new TimeTrackerViewModel();
+            //listDays.ItemsSource = vm.Days;
             DataContext = vm;
         }
 

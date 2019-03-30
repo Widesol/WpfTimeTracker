@@ -108,7 +108,6 @@
         <TextBlock Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="11" Margin="5" Text="" />
 
 
-
         <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="1" Grid.Row="1">
             <ItemsControl  ItemsSource="{Binding Days}">
                 <ItemsControl.ItemTemplate>
@@ -120,7 +119,98 @@
         </StackPanel>
 
 
-   
+        
+        <!--ContentControl gör det möjligt att indexera propertyn i vymodellen, 
+        ItemsControl gör det möjligt att loopa igenom vår lista, där är de nästlade här-->
+
+        <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="2" Grid.Row="1">
+            <ContentControl Content="{Binding TimeTable[0]}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <ItemsControl  ItemsSource="{Binding Path=HoursPerDay}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Grid.Column="2" Text="{Binding}"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="3" Grid.Row="1">
+            <ContentControl Content="{Binding TimeTable[1]}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <ItemsControl  ItemsSource="{Binding Path=HoursPerDay}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Grid.Column="2" Text="{Binding}"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="4" Grid.Row="1">
+            <ContentControl Content="{Binding TimeTable[2]}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <ItemsControl  ItemsSource="{Binding Path=HoursPerDay}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Grid.Column="2" Text="{Binding}"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.RowSpan="32" Grid.Column="5" Grid.Row="1">
+            <ContentControl Content="{Binding TimeTable[3]}">
+                <ContentControl.ContentTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <ItemsControl  ItemsSource="{Binding Path=HoursPerDay}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Grid.Column="2" Text="{Binding}"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ContentControl.ContentTemplate>
+            </ContentControl>
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
